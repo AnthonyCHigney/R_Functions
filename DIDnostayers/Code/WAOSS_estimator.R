@@ -163,7 +163,8 @@ Qut_XX <- t(Qut_XX)
 Qut_XX_df <- as.data.frame(Qut_XX)
 
 
-IF_XX <-  matrix(0, nrow = 2342, ncol = 5)
+#you have to chnage this ncol if you have more covariates
+IF_XX <-  matrix(0, nrow = nrow(data), ncol = 5)
 
 # Loop through each row of Qut_XX
 for (i in 1:5) {
@@ -173,8 +174,7 @@ for (i in 1:5) {
 
 # Store IF_XX in a data frame
 IF_XX_df <- as.data.frame(IF_XX)
-
-
+  
 #Compute the partial derivative : sgn(deltaD)*deriv(g)(D1,0)
 
 data$derivg_alph0_XX <- 1
